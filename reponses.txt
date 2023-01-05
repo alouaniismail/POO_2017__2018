@@ -1,0 +1,69 @@
+EXO1:
+1/package gems=>la compilation de ce fichier avec -d build/ -cp build/ se retrouvera dans build/tec et la classe est visible de l'extèrieur par toutes les autres classes du paquetage.
+c'est comme un module rassemblaant un certain nombre de fonctionnalitées. 
+2/final signifie que cette méthode ne peut pas être redéfinie dans une autre classe.(@override)
+(via extends(héritage)) différent de l'overloading qui surcharge dans le même fichier avec le nême nom mais des arguments différents.
+3/accessible en respectant le principe d'encapsulation sans instanciation, le contraire pour l'autre : aussi: une variable de classe statique est une variable membre statique appartenant à la classe, tous les objets qui en découlent ont cette variable commune.
+4/A chaque modification, le personnage se redésinne c'est à dire une nouvelle instance de lui. La fonction move doit retourner new Steven(xCurrent+dx, yCurrent+dy). Le rapport c'est que si on décide par exemple de remettre les coordonées comme ils étaient depuis l'extèrieur c'est possible aucune sécurité d'où le principe d'encapsulation qui a été violé. La solution est de rendre les attributs protected/orivate.
+
+EXO2:
+1/
+package gems;
+
+public class Universe extends Steven{
+    public Universe(int xStart, int yStart){
+	super(xStart,yStart);
+    }
+
+    public void draw(){
+	super.draw();
+	System.out.println("Draw a star at:" + x + ", " + y);
+    }
+}
+2/La relation de type/sous-type assure le polymorphisme
+Steven u1=new Universe(30,50);
+<=>L'appel d'une méthode (envoie de messages) depuis un autre type dérivé est valide et en liaison dynamique (gestion de l'appel à l'exécution).
+On dit que:
+cela assure la validité d'envoie de msgs sur les instances de la classe dérivée.
+** 
+Elle assure aussi la non duplication du code via la relation d'héritage qui conduit à la relation type/sous-type via des propriétées communes étudiées.
+**
+(envoyer depuis un autre type une méthode d'une autre classe car existe relation héritage)
+Cela permet la réutilisation du code.(voire factorisation du code).
+3/Universe u1=new Universe(20,30);
+u1.move();
+puis appel à draw=>résolution à l'exécution=>Liaison dynamique.
+à l'éxecution u1.move va éxecuter this.draw() avec la fonction final not @override donc appartenante à Steven code source this pointe sur une instance e STeven 'où l'application partielle de draw() de Steven.
+AUTREMENT:
+liaison dynamique: u1.move() résolution=>move de Universe puis this.draw() ; this est ajouté, on pourrait l'enlever (compilateur 03) ce qui donnerait draw()dans une fonction non redéfinie et impossible de l'être=>application du draw() classique.
+AUTREMENT:
+u1.move() liaison dynamique à l'exécution (concerne un cas de polymotphisme)
+=>this.draw(), this référence Universe soit le draw() de Universe appliqué , voir les fichiers *.java. javac -cp build/ -d build/ *.java après mkdir -p build/ puis java -cp/ build gems.Univberse (où se trouve le main).
+ VOILà.
+ 4/là le contraire, affichage que de drawing. 
+ u1.move() fait appel à this.draw dans le fichier Source steven.java une fonction statique on enlève le this (optimisations du compilateur) appel direct à draw d'où l'affichage souhaité.
+ This dans le move va référencer une instance de la classe Universe, la liaison dynamique entre l'envoi de msgs et l'& de la mthd se fait à l'exécution selon le type de l'instance. Ce qui conduit à l'exécution de this.draw() ;  Les méthodes « static » ne peuvent pas êtres redéfinis.(règle primordiale) ; même si on a bricolé le code. Du coup une seule existe et le this s'enlève avec le mot clef static et les anti-optimisations du compilateur d'où: drawing seulement.
+ 
+ A RETENIR:
+ Le lien est un est defini à la compilation. 
+ Le lien a-un utilise 2 objets en revanche pour le lien est-un qui n'utilise qu'un.
+
+
+ EXO3:
+ 1/Un lien a-un via P dans T en terme d'attribut?
+ Un lien a-un est défini à l'exécution il aura un comportement dynamique selon l'état de l'instance où est stocké l'attribut. 
+ 2/
+ rappels importants:
+ En utilissant le lien a-un, on peut changer le membre à l'exécution.
+ ->Le code du lien a-un:
+ 1 seul attribut
+ reprise de méthodes non accessibles propriétée privée.
+ remplacement pour reprendre le 1er scénario: déja indiqué.
+ 3/voir le dernier rappel fait, quelques lignes en-dessus.
+ 4/Pour faire une substititution, il faut avoir 'qlq chose de partagée' => qlqs fonctions => type & interface (contract de ces quelques unes)=> construction d'une interface et test avec:
+ *ubuntu20@ubuntu20-Lenovo-ThinkBook-15-IIL:~/POO_2017__2018$ javac Quartz.java Interface1.java Steven.java Main.java 
+;
+cela marhce parfaitement LA SUBSTITUTION D'OBJETS.
+
+EXO4:
+
