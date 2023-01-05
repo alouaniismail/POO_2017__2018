@@ -66,4 +66,21 @@ u1.move() liaison dynamique à l'exécution (concerne un cas de polymotphisme)
 cela marhce parfaitement LA SUBSTITUTION D'OBJETS.
 
 EXO4:
-
+On utilise une classe abstraite qui va faire le flight avec une action qui est une méthode abstrtaite de cette derniere définie comme une bizarrerie pour file1.java et 2 pour la deuxième. 
+compilation des 3 fichiers en regroupement pour savoir si cela marhc ecomme avant.
+Cela marche ; parfait !!!
+FIN 2017-2018.
+Interessants:
+>>TECHNIQUE DE L'INTERFACE POUR FAIRE LA SUBSTITUTION D'OBJETS DEOUIS UN LIEN A-UN.
+>>TECHNIQUE DE MISE D'UNE FONCTION ABSTRAITE AU MILIEU D'UNE BOUCLE ET IMPLEMENTATION AVEC EXTENDS POUR FACTORISER LE CODE.
+>>LES APPELS SUIVANT DES LIAISONS DYNAMIQUES/STATIQUES(ENTRAINEMENT)
+>>VARIABLES vs INSTANCES && REFAIRE EN GRAS RETOURNE INSTANCE DONT LES MODIFICATIONS DES ARGUMENTS QUI AIGUILLENT LES ATTRIBUTS EN TERME DE VALEURS NON ACCESSIBLES (PORTEE PACKAGE)=>concept d'necapsulation avec final non @override 'seulement' et la portée/la visibilitée voire les droits d'accès.
+A RETENIR:
+1/LA METHODE DES INTERFACES POUR LA SUBSTITUTION D'OBJETS EN LIEN A-UN.
+2/FACTORISATION DU CODE A L'AIDE DE CLASSES ABSTRAITES.
+2 choses  
+>>>interface substitution d'objets pour avoir un tyoe en commun vu les implémentations de fonctions intersection vide et test(ici vua Main.java)
+>>>abstract class pour paramétrer ce que fera une boucle ainsi 2 comportement différents sans embrouiller le code qui devient organisé ; voilà.
+A RETENIR:
+a-L'utilitée des interfaces pour faire un lien FORT de tyoage polymorphe implicite.
+b-La qualité des classes abstraites pour limiter le code à une fonction générique qui couplé à un seul explemplaire représente un comportement parmi un ensemble de comportement qu'on a voulu factoriser.
