@@ -82,5 +82,5 @@ A RETENIR:
 >>>interface substitution d'objets pour avoir un tyoe en commun vu les implémentations de fonctions intersection vide et test(ici vua Main.java)
 >>>abstract class pour paramétrer ce que fera une boucle ainsi 2 comportement différents sans embrouiller le code qui devient organisé ; voilà.
 A RETENIR:
-a-L'utilitée des interfaces pour faire un lien FORT de tyoage polymorphe implicite.
-b-La qualité des classes abstraites pour limiter le code à une fonction générique qui couplé à un seul explemplaire représente un comportement parmi un ensemble de comportement qu'on a voulu factoriser.
+a-L'utilitée des interfaces pour faire un lien FORT de typage polymorphe implicite.
+b-La qualité des classes abstraites pour limiter le code à une fonction générique qui couplé à un seul exemplaire représente un comportement parmi un ensemble de comportement qu'on a voulu factoriser.
