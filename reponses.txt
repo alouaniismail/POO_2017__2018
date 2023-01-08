@@ -71,7 +71,7 @@ compilation des 3 fichiers en regroupement pour savoir si cela marhc ecomme avan
 Cela marche ; parfait !!!
 FIN 2017-2018.
 Interessants:
->>TECHNIQUE DE L'INTERFACE POUR FAIRE LA SUBSTITUTION D'OBJETS DEOUIS UN LIEN A-UN.
+>>TECHNIQUE DE L'INTERFACE POUR FAIRE LA SUBSTITUTION D'OBJETS DEPUIS UN LIEN A-UN.
 >>TECHNIQUE DE MISE D'UNE FONCTION ABSTRAITE AU MILIEU D'UNE BOUCLE ET IMPLEMENTATION AVEC EXTENDS POUR FACTORISER LE CODE.
 >>LES APPELS SUIVANT DES LIAISONS DYNAMIQUES/STATIQUES(ENTRAINEMENT)
 >>VARIABLES vs INSTANCES && REFAIRE EN GRAS RETOURNE INSTANCE DONT LES MODIFICATIONS DES ARGUMENTS QUI AIGUILLENT LES ATTRIBUTS EN TERME DE VALEURS NON ACCESSIBLES (PORTEE PACKAGE)=>concept d'necapsulation avec final non @override 'seulement' et la portée/la visibilitée voire les droits d'accès.
@@ -79,7 +79,7 @@ A RETENIR:
 1/LA METHODE DES INTERFACES POUR LA SUBSTITUTION D'OBJETS EN LIEN A-UN.
 2/FACTORISATION DU CODE A L'AIDE DE CLASSES ABSTRAITES.
 2 choses  
->>>interface substitution d'objets pour avoir un tyoe en commun vu les implémentations de fonctions intersection vide et test(ici vua Main.java)
+>>>interface substitution d'objets pour avoir un type en commun vu les implémentations de fonctions intersection vide et test(ici vue Main.java)
 >>>abstract class pour paramétrer ce que fera une boucle ainsi 2 comportement différents sans embrouiller le code qui devient organisé ; voilà.
 A RETENIR:
 a-L'utilitée des interfaces pour faire un lien FORT de typage polymorphe implicite.
