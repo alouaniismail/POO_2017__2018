@@ -14,11 +14,12 @@ public class Universe extends Steven{
     public Universe(int xStart, int yStart){
 	super(xStart,yStart);
     }
-
+private void drawStar(int x, int y){
+System.out.println("Draw a star at: "+x"+ ", " +y);
+}
     public void draw(){
-	super.draw();
-	System.out.println("Draw a star at:" + x + ", " + y);
-    }
+super.draw();
+drawStar(xCurrent,yCurrent);
 }
 2/La relation de type/sous-type assure le polymorphisme
 Steven u1=new Universe(30,50);
